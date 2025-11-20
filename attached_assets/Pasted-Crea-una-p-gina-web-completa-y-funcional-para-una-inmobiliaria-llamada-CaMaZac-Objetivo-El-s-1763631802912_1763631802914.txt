@@ -1,0 +1,58 @@
+Crea una página web completa y funcional para una inmobiliaria llamada "CaMaZac".
+
+🔹 Objetivo:
+El sitio debe enfocarse en la venta de propiedades, mostrando listados con sus imágenes, dirección, descripción y precio. 
+Los usuarios podrán crear una cuenta o iniciar sesión para enviar mensajes al administrador acerca de las propiedades.
+El administrador podrá iniciar sesión con una cuenta especial para agregar, eliminar o editar propiedades desde un panel.
+
+🔹 Requisitos técnicos:
+1. Usa HTML, CSS, JavaScript (frontend) y Node.js con Express (backend).
+2. Utiliza una base de datos (MySQL o SQLite) para guardar usuarios, mensajes y propiedades.
+3. Crea un sistema de autenticación seguro (bcrypt para contraseñas, sesiones o JWT).
+4. Permite al administrador:
+   - Agregar propiedades (con título, dirección, descripción, precio, tipo y hasta 5 imágenes).
+   - Editar propiedades existentes.
+   - Eliminar propiedades.
+5. Permite a los usuarios registrados:
+   - Ver propiedades disponibles.
+   - Enviar mensajes o solicitudes al administrador desde una propiedad específica.
+6. Permite subir imágenes desde los archivos locales (usa `multer` para manejar uploads).
+7. Todas las propiedades se deben actualizar automáticamente al modificarse o eliminarse en la base de datos.
+8. Crea un archivo de configuración `.env` con variables básicas (puerto, base de datos, usuario, contraseña).
+9. Agrega instrucciones en un README.md para instalar y ejecutar el proyecto.
+
+🔹 Estilo visual:
+- Tema principal: tonos amarillos (#FFD700, #F2C200) combinados con gris oscuro o negro.
+- Apariencia moderna, profesional y elegante (usa tipografías limpias como Poppins o Montserrat).
+- El logo "CaMaZac" debe aparecer en la esquina superior izquierda.
+- Incluye navbar fija, footer con información de contacto y redes sociales.
+- Usa un layout tipo tarjetas para mostrar las propiedades con efecto hover suave.
+
+🔹 Estructura del proyecto:
+- /public (CSS, JS, imágenes)
+- /views (páginas EJS o HTML)
+- /routes (rutas de autenticación, propiedades y administración)
+- /models (definición de tablas SQL)
+- /uploads (carpeta para imágenes de propiedades)
+- server.js (punto de entrada principal)
+- database.js (conexión a MySQL o SQLite)
+- .env (configuración)
+- README.md
+
+🔹 Páginas que debe tener:
+1. index.html — Página principal con propiedades destacadas.
+2. propiedades.html — Catálogo general con filtros de búsqueda.
+3. login.html y register.html — Páginas para iniciar sesión o registrarse.
+4. contacto.html — Formulario de contacto.
+5. admin.html — Panel de administración (solo accesible con rol de administrador).
+
+🔹 Funcionalidades extra:
+- Al editar una propiedad, que los cambios se reflejen sin necesidad de recargar toda la página (usa fetch o AJAX).
+- Validación de formularios en frontend y backend.
+- Los mensajes enviados por usuarios deben guardarse en la base de datos y mostrarse al administrador.
+
+🔹 Meta final:
+El sitio debe estar completamente funcional y listo para subirlo a internet, incluyendo base de datos configurada y scripts de instalación. 
+Debe poder ejecutarse con el comando:
+   npm install
+   npm start
