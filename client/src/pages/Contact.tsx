@@ -142,9 +142,8 @@ export default function Contact() {
                       <h3 className="font-semibold text-lg">Dirección</h3>
                     </div>
                     <p className="text-muted-foreground ml-14">
-                      Av. Principal 123<br />
-                      Ciudad, Estado 12345<br />
-                      México
+                      Call. Francisco Villas Col. Ejidal, Guadalupe<br />
+                      Zacatecas
                     </p>
                   </div>
 
@@ -156,7 +155,7 @@ export default function Contact() {
                       <h3 className="font-semibold text-lg">Teléfono</h3>
                     </div>
                     <p className="text-muted-foreground ml-14">
-                      +1 (555) 123-4567<br />
+                      +52 492-266-8290 <br />
                       Lun - Vie: 9:00 AM - 6:00 PM
                     </p>
                   </div>

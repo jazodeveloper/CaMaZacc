@@ -1,13 +1,13 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
+import { storage } from "./storage.ts";
 import session from "express-session";
 import bcrypt from "bcryptjs";
 import multer from "multer";
 import path from "path";
 import fs from "fs/promises";
-import { insertUserSchema, insertPropertySchema, insertMessageSchema } from "@shared/schema";
-import type { User } from "@shared/schema";
+import { insertUserSchema, insertPropertySchema, insertMessageSchema } from "../shared/schema.ts";   
+import type { User } from "../shared/schema.ts";   
 
 declare module "express-session" {
   interface SessionData {
@@ -168,6 +168,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const properties = await storage.getAllProperties();
       res.json(properties);
     } catch (error) {
+      console.error("ERROR EN /api/properties:", error); 
       res.status(500).json({ message: "Error al obtener propiedades" });
     }
   });

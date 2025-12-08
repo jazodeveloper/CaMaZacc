@@ -37,7 +37,11 @@ export default function PropertyForm({ property, onClose }: PropertyFormProps) {
         method: "POST",
         body: data,
       });
-      if (!response.ok) throw new Error("Error al crear la propiedad");
+       if (!response.ok) {
+      const text = await response.text(); // <-- 🔥 muestra el error real
+      console.error("Server error:", text);
+      throw new Error("Error al crear la propiedad");
+    }
       return response.json();
     },
     onSuccess: () => {

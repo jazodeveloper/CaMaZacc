@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import { registerRoutes } from "./routes";
+import { registerRoutes } from "./routes.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,26 +11,30 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Registrar tus rutas API
+// Registrar rutas backend (API)
 registerRoutes(app);
 
 // ---------------------------
 // SERVIR FRONTEND EN PRODUCCIÓN
 // ---------------------------
-if (process.env.NODE_ENV === "production") {
-  const distPath = path.join(__dirname, "..", "client", "dist");
 
-  app.use(express.static(distPath));
+// ESTA ES LA RUTA CORRECTA DEL BUILD DE VITE
+const publicPath = path.join(__dirname, "../dist/public");
 
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(distPath, "index.html"));
-  });
-}
+app.use(express.static(publicPath));
+
+// Cualquier ruta devuelve el index.html dentro del build
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(publicPath, "index.html"));
+});
+
 // ---------------------------
 // INICIAR SERVIDOR
 // ---------------------------
 
 const port = parseInt(process.env.PORT || "5000", 10);
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+export default app;

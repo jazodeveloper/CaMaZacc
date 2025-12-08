@@ -1,5 +1,5 @@
-import { users, properties, messages, type User, type InsertUser, type Property, type InsertProperty, type Message, type InsertMessage } from "@shared/schema";
-import { db } from "./db";
+import { users, properties, messages, type User, type InsertUser, type Property, type InsertProperty, type Message, type InsertMessage } from "../shared/schema.ts";
+import { db } from "./db.ts";
 import { eq } from "drizzle-orm";
 
 export interface IStorage {

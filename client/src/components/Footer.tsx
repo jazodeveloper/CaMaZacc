@@ -53,13 +53,13 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  Av. Principal 123, Ciudad
+                  Call. Francisco Villa col. Ejidal Guadalupe, Zacatecas
                 </span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  +1 (555) 123-4567
+                  +52 492-266-8290
                 </span>
               </li>
               <li className="flex items-center gap-2">
@@ -75,7 +75,7 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Síguenos</h3>
             <div className="flex gap-4">
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/CaMaZac.ventas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover-elevate active-elevate-2 p-2 rounded-md transition-all"
@@ -84,7 +84,7 @@ export default function Footer() {
                 <SiFacebook className="w-6 h-6 text-primary" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/inmcamazac?igsh=MTE4aDM4cTVsYzllYg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover-elevate active-elevate-2 p-2 rounded-md transition-all"
@@ -93,7 +93,7 @@ export default function Footer() {
                 <SiInstagram className="w-6 h-6 text-primary" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/CaMaZac.ventas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover-elevate active-elevate-2 p-2 rounded-md transition-all"
