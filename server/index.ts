@@ -14,32 +14,35 @@ app.use(express.urlencoded({ extended: false }));
 // Registrar rutas backend (API)
 registerRoutes(app);
 
+app.set("port", process.env.PORT || 5000);
 // ---------------------------
 // SERVIR FRONTEND EN PRODUCCIÓN
 // ---------------------------
 
 // ESTA ES LA RUTA CORRECTA DEL BUILD DE VITE
-const publicPath = path.join(__dirname, "../dist/public");
+// 🚀 Ruta correcta donde Vite deja la build
+const publicPath = path.join(__dirname, "../dist");
 
+// Servir archivos estáticos
+const port = parseInt(process.env.PORT || "5000", 10);
 app.use(express.static(publicPath));
 
-// Cualquier ruta devuelve el index.html dentro del build
-app.get("/", (req, res) => {
-  res.send("API working");
+// 🧪 Endpoint básico para que Railway haga health check
+app.get("/health", (req, res) => {
+  res.send("ok");
 });
 
-app.use(express.static(publicPath));
-app.get("*", (_req, res) => {
+// Cualquier ruta devuelve index.html
+app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
-// ---------------------------
-// INICIAR SERVIDOR
-// ---------------------------
-
-const port = parseInt(process.env.PORT || "5000", 10);
-
-app.listen(port, "0.0.0.0", () => {
+app.listen(port, () => {
   console.log(`Server running on port ${port}`);
+}).on("listening", () => {
+  console.log("Listening on 0.0.0.0");
 });
+app.set("host", "0.0.0.0");
+
+
 export default app;
