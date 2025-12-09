@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "seed": "ts-node seed.ts",
-    "dev": "ts-node index.ts",
-    "start": "node server/index.ts"
+     "dev": "ts-node index.ts", 
+  "build": "tsc && vite build",
+  "start": "node dist/server/index.ts"
   },
   "dependencies": {
     "@types/node": "^24.10.1",
