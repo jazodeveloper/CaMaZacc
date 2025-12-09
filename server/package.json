@@ -6,6 +6,7 @@
      "dev": "ts-node index.ts", 
   "build": "cd server && npm run build && cd ../client && npm run build",
   "start": "node server/index.ts"
+  
   },
   "dependencies": {
     "@types/node": "^24.10.1",
@@ -15,8 +16,10 @@
     "pg": "^8.11.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+    
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
   }
+  
 }
