@@ -24,6 +24,11 @@ const publicPath = path.join(__dirname, "../dist/public");
 app.use(express.static(publicPath));
 
 // Cualquier ruta devuelve el index.html dentro del build
+app.get("/", (req, res) => {
+  res.send("API working");
+});
+
+app.use(express.static(publicPath));
 app.get("*", (_req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
@@ -34,7 +39,7 @@ app.get("*", (_req, res) => {
 
 const port = parseInt(process.env.PORT || "5000", 10);
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
 export default app;
